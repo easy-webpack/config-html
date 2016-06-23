@@ -7,7 +7,7 @@ import * as path from 'path'
  *
  * See: https://github.com/webpack/html-loader
  */
-export function html(exclude: Array<string> = null) {
+export = function html(exclude: Array<string> = null) {
   return function html(this: WebpackConfig): WebpackConfig {
     return {
       module: {
