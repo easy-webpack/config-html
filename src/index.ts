@@ -14,7 +14,7 @@ export = function html({exclude = null} = {}) {
         loaders: get(this, 'module.loaders', []).concat([{
           test: /\.html$/,
           loader: 'html',
-          exclude: exclude || this.metadata.root ? [path.join(this.metadata.root, 'index.html')] : [],
+          exclude: exclude || (this.metadata.root ? [path.join(this.metadata.root, 'index.html')] : []),
         }])
       }
     }
