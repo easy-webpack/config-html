@@ -11,7 +11,7 @@ export = function html({exclude = null} = {}) {
   return function html(this: WebpackConfigWithMetadata): WebpackConfigWithMetadata {
     return {
       module: {
-        loaders: get(this, 'module.loaders', []).concat([{
+        rules: get(this, 'module.rules', []).concat([{
           test: /\.html$/,
           loader: 'html',
           exclude: exclude || (this.metadata.root ? [path.join(this.metadata.root, 'index.html')] : []),
