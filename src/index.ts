@@ -13,7 +13,7 @@ export = function html({exclude = null} = {}) {
       module: {
         rules: get(this, 'module.rules', []).concat([{
           test: /\.html$/,
-          loader: 'html',
+          loader: 'html-loader',
           exclude: exclude || (this.metadata.root ? [path.join(this.metadata.root, 'index.html')] : []),
         }])
       }
